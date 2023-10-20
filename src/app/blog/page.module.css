@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .image{
+    object-fit: cover;
+    animation: fade-in 1s ease forwards;
+  }
+
+  @keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translatex(-200px); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+  
+  .content {
+  }
+  
+  .title{
+    margin-bottom: 10px;
+  }
+  
+  .desc{
+    font-size: 18px;
+    color: #999;
+  }
+  
