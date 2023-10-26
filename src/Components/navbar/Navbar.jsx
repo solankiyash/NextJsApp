@@ -4,6 +4,7 @@ import React, { useContext, useState } from "react";
 import styles from "../navbar/navbar.module.css"
 import DayNightToggle from "react-day-and-night-toggle"
 import { ThemeContext } from "@/app/Context/ThemeContext";
+import { useSession } from "next-auth/react";
 
 
 
@@ -41,6 +42,8 @@ const links = [
 ];
 
 function Navbar() {
+
+  const session = useSession()
  
   const {toggle,mode,isDarkMode} = useContext(ThemeContext)
   
@@ -62,10 +65,12 @@ function Navbar() {
           checked={isDarkMode}
         />
 
-        
+        {
+          session.status === 'authenticated' && (
           <button className={styles.logout}>
-            Logout
+            SingOut
           </button>
+          )}
       </div>
     </div>
   );
